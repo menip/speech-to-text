@@ -22,7 +22,7 @@
  * @author Leonardo Macedo
  */
 class STTConfig : public Resource {
-	OBJ_TYPE(STTConfig, Resource);
+	GDCLASS(STTConfig, Resource);
 	friend class STTRunner;
 
 private:

@@ -1,6 +1,6 @@
 #include "stt_queue.h"
 
-String STTQueue::get() {
+String STTQueue::next() {
 	if (empty()) {
 		WARN_PRINT("Empty keywords queue, returning empty String");
 		return String("");
@@ -46,7 +46,7 @@ int STTQueue::get_capacity() {
 }
 
 void STTQueue::_bind_methods() {
-	ClassDB::bind_method("get",   &STTQueue::get);
+	ClassDB::bind_method("next",  &STTQueue::next);
 	ClassDB::bind_method("size",  &STTQueue::size);
 	ClassDB::bind_method("empty", &STTQueue::empty);
 	ClassDB::bind_method("clear", &STTQueue::clear);

@@ -16,7 +16,7 @@
  * @author Leonardo Macedo
  */
 class STTRunner : public Node {
-	OBJ_TYPE(STTRunner, Node);
+	GDCLASS(STTRunner, Node);
 
 private:
 	Thread *recognition;  ///< Used to run the speech recognition in parallel

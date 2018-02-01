@@ -18,7 +18,7 @@
  * @author Leonardo Macedo
  */
 class STTError : public Object {
-	OBJ_TYPE(STTError, Object);
+	GDCLASS(STTError, Object);
 
 public:
 	/**

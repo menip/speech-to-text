@@ -12,7 +12,7 @@
  * @author Leonardo Macedo
  */
 class STTQueue : public Reference {
-	OBJ_TYPE(STTQueue, Reference);
+	GDCLASS(STTQueue, Reference);
 
 private:
 	/**
@@ -39,7 +39,7 @@ public:
 	 *
 	 * @return The first element in the keywords queue, or \c "" if it is empty.
 	 */
-	String get();
+	String next();
 
 	/**
 	 * Adds the specified keyword to the end of the queue, returning \c true if
