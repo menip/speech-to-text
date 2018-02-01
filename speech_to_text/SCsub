@@ -171,8 +171,8 @@ if ARGUMENTS.get('speech_to_text_shared', 'no') == 'yes':
 
     # Notify main env of new library dependency
     shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
-    env.Append(LIBS=shared_lib_shim)
-    env.Append(LIBPATH='#bin')
+    env.Append(LIBS=[shared_lib_shim])
+    env.Append(LIBPATH=['#bin'])
 else:
     # Static compilation
     module_env.add_source_files(env.modules_sources, all_srcs)
