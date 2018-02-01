@@ -175,26 +175,26 @@ String STTConfig::_convert_to_data_path(String filename) {
 void STTConfig::_bind_methods() {
 	ClassDB::bind_method("init", &STTConfig::init);
 
-	ClassDB::bind_method(_MD("set_hmm_dirname", "hmm_dirname"),
-	                          &STTConfig::set_hmm_dirname);
+	ClassDB::bind_method(D_METHOD("set_hmm_dirname", "hmm_dirname"),
+	                     &STTConfig::set_hmm_dirname);
 	ClassDB::bind_method("get_hmm_dirname", &STTConfig::get_hmm_dirname);
 
-	ClassDB::bind_method(_MD("set_dict_filename", "dict_filename"),
-	                          &STTConfig::set_dict_filename);
+	ClassDB::bind_method(D_METHOD("set_dict_filename", "dict_filename"),
+	                     &STTConfig::set_dict_filename);
 	ClassDB::bind_method("get_dict_filename", &STTConfig::get_dict_filename);
 
-	ClassDB::bind_method(_MD("set_kws_filename", "kws_filename"),
-	                          &STTConfig::set_kws_filename);
+	ClassDB::bind_method(D_METHOD("set_kws_filename", "kws_filename"),
+	                     &STTConfig::set_kws_filename);
 	ClassDB::bind_method("get_kws_filename", &STTConfig::get_kws_filename);
 
 	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "hmm directory", PROPERTY_HINT_DIR),
-	               _SCS("set_hmm_dirname"), _SCS("get_hmm_dirname"));
+	               "set_hmm_dirname", "get_hmm_dirname");
 	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "dictionary file",
 	                            PROPERTY_HINT_FILE, "dict"),
-	               _SCS("set_dict_filename"), _SCS("get_dict_filename"));
+	               "set_dict_filename", "get_dict_filename");
 	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "keywords file",
 	                            PROPERTY_HINT_FILE, "kws"),
-	               _SCS("set_kws_filename"), _SCS("get_kws_filename"));
+	               "set_kws_filename", "get_kws_filename");
 }
 
 STTConfig::STTConfig() {

@@ -51,8 +51,8 @@ void STTQueue::_bind_methods() {
 	ClassDB::bind_method("empty", &STTQueue::empty);
 	ClassDB::bind_method("clear", &STTQueue::clear);
 
-	ClassDB::bind_method(_MD("set_capacity", "capacity"),
-	                          &STTQueue::set_capacity);
+	ClassDB::bind_method(D_METHOD("set_capacity", "capacity"),
+	                     &STTQueue::set_capacity);
 	ClassDB::bind_method("get_capacity", &STTQueue::get_capacity);
 
 	BIND_CONSTANT(DEFAULT_KWS_CAPACITY);

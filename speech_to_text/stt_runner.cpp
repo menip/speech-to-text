@@ -148,17 +148,17 @@ void STTRunner::_bind_methods() {
 	ClassDB::bind_method("running", &STTRunner::running);
 	ClassDB::bind_method("stop",    &STTRunner::stop);
 
-	ClassDB::bind_method(_MD("set_config", "stt_config"),
-	                          &STTRunner::set_config);
+	ClassDB::bind_method(D_METHOD("set_config", "stt_config"),
+	                     &STTRunner::set_config);
 	ClassDB::bind_method("get_config", &STTRunner::get_config);
 
-	ClassDB::bind_method(_MD("set_queue", "stt_queue"), &STTRunner::set_queue);
+	ClassDB::bind_method(D_METHOD("set_queue", "stt_queue"), &STTRunner::set_queue);
 	ClassDB::bind_method("get_queue", &STTRunner::get_queue);
 
-	ClassDB::bind_method(_MD("set_rec_buffer_size", "size"),
-	                          &STTRunner::set_rec_buffer_size);
+	ClassDB::bind_method(D_METHOD("set_rec_buffer_size", "size"),
+	                     &STTRunner::set_rec_buffer_size);
 	ClassDB::bind_method("get_rec_buffer_size",
-	                          &STTRunner::get_rec_buffer_size);
+	                     &STTRunner::get_rec_buffer_size);
 
 	ClassDB::bind_method("get_run_error",   &STTRunner::get_run_error);
 	ClassDB::bind_method("reset_run_error", &STTRunner::reset_run_error);
@@ -167,10 +167,10 @@ void STTRunner::_bind_methods() {
 
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "config",
 	                          PROPERTY_HINT_RESOURCE_TYPE, "STTConfig"),
-	             _SCS("set_config"), _SCS("get_config"));
+	             "set_config", "get_config");
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "recorder buffer size (bytes)",
 	                          PROPERTY_HINT_RANGE, "256,4096,32"),
-	             _SCS("set_rec_buffer_size"), _SCS("get_rec_buffer_size"));
+	             "set_rec_buffer_size", "get_rec_buffer_size");
 }
 
 STTRunner::STTRunner() {
