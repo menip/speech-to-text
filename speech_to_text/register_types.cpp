@@ -1,6 +1,7 @@
 #include "register_types.h"
 #include "class_db.h"
 #include "core/os/dir_access.h"  // DirAccess::exists()
+#include "engine.h"              // Engine::Singleton(), Engine::get_singleton()
 
 #include "stt_config.h"
 #include "stt_queue.h"
@@ -17,7 +18,7 @@ void register_speech_to_text_types() {
 	ClassDB::register_virtual_class<STTError>();
 
 	stt_error = memnew(STTError);
-	Globals::get_singleton()->add_singleton(Globals::Singleton("STTError", STTError::get_singleton()));
+	Engine::get_singleton()->add_singleton(Engine::Singleton("STTError", STTError::get_singleton()));
 }
 
 void unregister_speech_to_text_types() {

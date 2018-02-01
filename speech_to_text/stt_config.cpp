@@ -1,7 +1,7 @@
 #include "stt_config.h"
 #include "file_dir_util.h"
 
-#include "core/os/os.h"           // OS::get_singleton()->get_data_dir()
+#include "core/os/os.h"           // OS::get_singleton()->get_user_data_dir()
 #include "core/os/memory.h"       // memalloc(), memfree(), memdelete()
 #include "core/os/dir_access.h"   // DirAccess::exists()
 #include "core/os/file_access.h"  // FileAccess::exists()
@@ -167,7 +167,7 @@ String STTConfig::get_kws_filename() const {
 }
 
 String STTConfig::_convert_to_data_path(String filename) {
-	String user_path = OS::get_singleton()->get_data_dir();
+	String user_path = OS::get_singleton()->get_user_data_dir();
 	String basename = filename.get_file();
 	return user_path.plus_file(STT_USER_DIRNAME).plus_file(basename);
 }
