@@ -144,24 +144,24 @@ void STTRunner::reset_run_error() {
 }
 
 void STTRunner::_bind_methods() {
-	ObjectTypeDB::bind_method("start",   &STTRunner::start);
-	ObjectTypeDB::bind_method("running", &STTRunner::running);
-	ObjectTypeDB::bind_method("stop",    &STTRunner::stop);
+	ClassDB::bind_method("start",   &STTRunner::start);
+	ClassDB::bind_method("running", &STTRunner::running);
+	ClassDB::bind_method("stop",    &STTRunner::stop);
 
-	ObjectTypeDB::bind_method(_MD("set_config", "stt_config"),
+	ClassDB::bind_method(_MD("set_config", "stt_config"),
 	                          &STTRunner::set_config);
-	ObjectTypeDB::bind_method("get_config", &STTRunner::get_config);
+	ClassDB::bind_method("get_config", &STTRunner::get_config);
 
-	ObjectTypeDB::bind_method(_MD("set_queue", "stt_queue"), &STTRunner::set_queue);
-	ObjectTypeDB::bind_method("get_queue", &STTRunner::get_queue);
+	ClassDB::bind_method(_MD("set_queue", "stt_queue"), &STTRunner::set_queue);
+	ClassDB::bind_method("get_queue", &STTRunner::get_queue);
 
-	ObjectTypeDB::bind_method(_MD("set_rec_buffer_size", "size"),
+	ClassDB::bind_method(_MD("set_rec_buffer_size", "size"),
 	                          &STTRunner::set_rec_buffer_size);
-	ObjectTypeDB::bind_method("get_rec_buffer_size",
+	ClassDB::bind_method("get_rec_buffer_size",
 	                          &STTRunner::get_rec_buffer_size);
 
-	ObjectTypeDB::bind_method("get_run_error",   &STTRunner::get_run_error);
-	ObjectTypeDB::bind_method("reset_run_error", &STTRunner::reset_run_error);
+	ClassDB::bind_method("get_run_error",   &STTRunner::get_run_error);
+	ClassDB::bind_method("reset_run_error", &STTRunner::reset_run_error);
 
 	BIND_CONSTANT(DEFAULT_REC_BUFFER_SIZE);
 

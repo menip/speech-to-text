@@ -1,5 +1,5 @@
 #include "register_types.h"
-#include "object_type_db.h"
+#include "class_db.h"
 #include "core/os/dir_access.h"  // DirAccess::exists()
 
 #include "stt_config.h"
@@ -11,10 +11,10 @@
 static STTError *stt_error = NULL;
 
 void register_speech_to_text_types() {
-	ObjectTypeDB::register_type<STTConfig>();
-	ObjectTypeDB::register_type<STTQueue>();
-	ObjectTypeDB::register_type<STTRunner>();
-	ObjectTypeDB::register_virtual_type<STTError>();
+	ClassDB::register_class<STTConfig>();
+	ClassDB::register_class<STTQueue>();
+	ClassDB::register_class<STTRunner>();
+	ClassDB::register_virtual_class<STTError>();
 
 	stt_error = memnew(STTError);
 	Globals::get_singleton()->add_singleton(Globals::Singleton("STTError", STTError::get_singleton()));

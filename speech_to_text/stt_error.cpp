@@ -48,7 +48,7 @@ STTError * STTError::get_singleton() {
 }
 
 void STTError::_bind_methods() {
-	ObjectTypeDB::bind_method(_MD("get_error_string", "error_number"),
+	ClassDB::bind_method(_MD("get_error_string", "error_number"),
 	                          &STTError::get_error_string);
 
 	BIND_CONSTANT(OK);
