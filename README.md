@@ -12,24 +12,23 @@ that captures the user's microphone input and converts it to text.
 Requirements
 ------------
 
-The module can be built with Godot 2.1.4 on the following platforms:
+The module can be built with Godot 3.0 on the following platforms:
 
 - Windows
 - OS X
 - Unix (with **PulseAudio** or **ALSA** requirement)
 - iOS
-- Android (untested; see below for more info)
+- Android
 
-Barring Android, export templates were successfully built, on all referred platforms,
-for Godot 2.1.4 with *Speech to Text*. Godot's repository can be found
-[here][godotRepo].
+On all referred platforms, export templates were successfully built for Godot 3.0
+with *Speech to Text*. Godot's repository can be found [here][godotRepo].
 
 Check if your system fulfills Godot's building [requirements][compilingReq] on the
 desired platform, or for cross-compiling to another system. Other than that, *Speech
 to Text* has no additional requirements. It is intended to be used alongside a
 microphone connected to the system, which will capture voice input.
 
-[compilingReq]: http://docs.godotengine.org/en/stable/development/compiling/index.html "Compiling Requirements"
+[compilingReq]: http://docs.godotengine.org/en/3.0/development/compiling/index.html "Compiling Requirements"
 [godotRepo]: https://github.com/godotengine/godot "Godot repository"
 
 
@@ -44,9 +43,9 @@ platform supported by the module, use the equivalent tools.
        $ git clone https://github.com/godotengine/godot
 
 2. Inside the cloned repository, change to the latest stable build that the module
-   works on (when these instructions were made, it was 2.1.4).
+   works on (when these instructions were made, it was 3.0).
 
-       $ git checkout 2.1.4-stable
+       $ git checkout 3.0-stable
 
 3. Add this repository's `speech_to_text/` folder to your Godot `modules/` directory.
 
@@ -97,7 +96,7 @@ Check the instructions and requirements on the Godot Docs [site][exportTemplates
 learn how to build export templates for a specific system. This includes cross
 compiling for opposite bits or even for a different platform.
 
-[exportTemplates]: http://docs.godotengine.org/en/stable/development/compiling/index.html "Building export templates"
+[exportTemplates]: http://docs.godotengine.org/en/3.0/development/compiling/index.html "Building export templates"
 
 
 Demo: Color Clutter
