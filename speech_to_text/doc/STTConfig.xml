@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <class name="STTConfig" inherits="Resource" category="Core" version="3.0-stable">
 	<brief_description>
+		Stores filenames and variables for [i]Pocketsphinx[/i] speech to text.
 	</brief_description>
 	<description>
+		Contains filenames and variables needed for speech to text using the internal [i]Pocketsphinx[/i] library. Instances of this class supply information to [STTRunner] objects.
 	</description>
 	<tutorials>
+		https://samuraisigma.github.io/godot-docs/doc/community/tutorials/misc/speech_to_text.html
 	</tutorials>
 	<demos>
+		[b]Color Clutter[/b], a simple Godot game that uses speech to text, is available on the following link:
+		https://github.com/SamuraiSigma/color-clutter
 	</demos>
 	<methods>
 		<method name="init">
 			<return type="int" enum="STTError.Error">
 			</return>
 			<description>
+				Initializes [i]Pocketsphinx[/i] speech to text variables. The attributes for HMM directory name, dictionary filename and keywords filename must have been previously defined with the appropriate setters.
+				Returns One of the following [STTError] values:
+				- [member STTError.OK]
+				- [member STTError.UNDEF_FILES_ERR]
+				- [member STTError.USER_DIR_MAKE_ERR]
+				- [member STTError.USER_DIR_COPY_ERR]
+				- [member STTError.MULTIBYTE_STR_ERR]
+				- [member STTError.MEMALLOC_ERR]
+				- [member STTError.CONFIG_CREATE_ERR]
+				- [member STTError.REC_CREATE_ERR]
+				- [member STTError.DECODER_CREATE_ERR]
+				[i]Note:[/i]
+				- See [method set_hmm_dirname] for setting the HMM directory name
+				- See [method set_dict_filename] for setting the dictionary filename
+				- See [method set_kws_filename] for setting the keywords filename
 			</description>
 		</method>
 	</methods>
 	<members>
 		<member name="dictionary file" type="String" setter="set_dict_filename" getter="get_dict_filename">
+			A text file containing words in the desired language, along with the phonemes for their pronunciation. These phonemes are defined in the [member hmm directory].
+			Exemplifying, for US English, the word [b]red[/b] would have the following line in the dictionary file:
+			[code]red R EH D[/code]
+			For more on building dictionary files, check the following link:
+			https://cmusphinx.github.io/wiki/tutorialdict
 		</member>
 		<member name="hmm directory" type="String" setter="set_hmm_dirname" getter="get_hmm_dirname">
+			The HMM (Hidden Markov Model) directory name. Known simply as the model, it contains a collection of files which statistically describe the language to be used.
+			[i]CMUSphinx[/i], which created, [i]Pocketsphinx[/i] library, has a few language models available for free use on the following link:
+			[b]https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models[/b]
 		</member>
 		<member name="keywords file" type="String" setter="set_kws_filename" getter="get_kws_filename">
+			Refers to a text file where every line contains a word and its respective detection threshold, isolated between [code]/[/code] characters. Each word must exist in the [member dictionary file].
+			An example of a line in this file for the word [b]red[/b] would be:
+			[code]red/1e-4/[/code]
 		</member>
 	</members>
 	<constants>
