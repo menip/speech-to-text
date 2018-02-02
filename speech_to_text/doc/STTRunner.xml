@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="STTRunner" inherits="Node" category="Core" version="3.0-stable">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<demos>
+	</demos>
+	<methods>
+		<method name="get_queue" qualifiers="const">
+			<return type="STTQueue">
+			</return>
+			<description>
+			</description>
+		</method>
+		<method name="get_run_error">
+			<return type="int" enum="STTError.Error">
+			</return>
+			<description>
+			</description>
+		</method>
+		<method name="reset_run_error">
+			<return type="void">
+			</return>
+			<description>
+			</description>
+		</method>
+		<method name="running">
+			<return type="bool">
+			</return>
+			<description>
+			</description>
+		</method>
+		<method name="set_queue">
+			<return type="void">
+			</return>
+			<argument index="0" name="stt_queue" type="STTQueue">
+			</argument>
+			<description>
+			</description>
+		</method>
+		<method name="start">
+			<return type="int" enum="STTError.Error">
+			</return>
+			<description>
+			</description>
+		</method>
+		<method name="stop">
+			<return type="void">
+			</return>
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="config" type="STTConfig" setter="set_config" getter="get_config">
+		</member>
+		<member name="recorder buffer size (bytes)" type="int" setter="set_rec_buffer_size" getter="get_rec_buffer_size">
+		</member>
+	</members>
+	<constants>
+		<constant name="DEFAULT_REC_BUFFER_SIZE" value="2048">
+		</constant>
+	</constants>
+</class>

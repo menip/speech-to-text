@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="STTConfig" inherits="Resource" category="Core" version="3.0-stable">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<demos>
+	</demos>
+	<methods>
+		<method name="init">
+			<return type="int" enum="STTError.Error">
+			</return>
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="dictionary file" type="String" setter="set_dict_filename" getter="get_dict_filename">
+		</member>
+		<member name="hmm directory" type="String" setter="set_hmm_dirname" getter="get_hmm_dirname">
+		</member>
+		<member name="keywords file" type="String" setter="set_kws_filename" getter="get_kws_filename">
+		</member>
+	</members>
+	<constants>
+	</constants>
+</class>

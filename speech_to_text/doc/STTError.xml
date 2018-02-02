@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="STTError" inherits="Object" category="Core" version="3.0-stable">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<demos>
+	</demos>
+	<methods>
+		<method name="get_error_string">
+			<return type="String">
+			</return>
+			<argument index="0" name="error_number" type="int" enum="STTError.Error">
+			</argument>
+			<description>
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="OK" value="0" enum="Error">
+		</constant>
+		<constant name="UNDEF_FILES_ERR" value="1" enum="Error">
+		</constant>
+		<constant name="UNDEF_CONFIG_ERR" value="2" enum="Error">
+		</constant>
+		<constant name="UNDEF_QUEUE_ERR" value="3" enum="Error">
+		</constant>
+		<constant name="USER_DIR_MAKE_ERR" value="4" enum="Error">
+		</constant>
+		<constant name="USER_DIR_COPY_ERR" value="5" enum="Error">
+		</constant>
+		<constant name="MULTIBYTE_STR_ERR" value="6" enum="Error">
+		</constant>
+		<constant name="CONFIG_CREATE_ERR" value="8" enum="Error">
+		</constant>
+		<constant name="MEM_ALLOC_ERR" value="7" enum="Error">
+		</constant>
+		<constant name="REC_CREATE_ERR" value="9" enum="Error">
+		</constant>
+		<constant name="DECODER_CREATE_ERR" value="10" enum="Error">
+		</constant>
+		<constant name="REC_START_ERR" value="11" enum="Error">
+		</constant>
+		<constant name="REC_STOP_ERR" value="12" enum="Error">
+		</constant>
+		<constant name="UTT_START_ERR" value="13" enum="Error">
+		</constant>
+		<constant name="UTT_RESTART_ERR" value="14" enum="Error">
+		</constant>
+		<constant name="AUDIO_READ_ERR" value="15" enum="Error">
+		</constant>
+	</constants>
+</class>
