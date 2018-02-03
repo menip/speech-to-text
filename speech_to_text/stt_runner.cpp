@@ -168,6 +168,9 @@ void STTRunner::_bind_methods() {
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "config",
 	                          PROPERTY_HINT_RESOURCE_TYPE, "STTConfig"),
 	             "set_config", "get_config");
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "queue",
+	                          PROPERTY_HINT_RESOURCE_TYPE, "STTQueue"),
+	             "set_queue", "get_queue");
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "recorder buffer size (bytes)",
 	                          PROPERTY_HINT_RANGE, "256,4096,32"),
 	             "set_rec_buffer_size", "get_rec_buffer_size");

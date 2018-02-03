@@ -20,7 +20,7 @@
 			<argument index="0" name="error_number" type="int" enum="STTError.Error">
 			</argument>
 			<description>
-				Returns a short [String] explaining the given [STTError] constant value.
+				Returns a short [String] explaining the given [STTError] constant.
 			</description>
 		</method>
 	</methods>

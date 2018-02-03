@@ -19,7 +19,7 @@
 			</return>
 			<description>
 				Initializes [i]Pocketsphinx[/i] speech to text variables. The attributes for HMM directory name, dictionary filename and keywords filename must have been previously defined with the appropriate setters.
-				Returns One of the following [STTError] values:
+				Returns one of the following [STTError] constants:
 				- [member STTError.OK]
 				- [member STTError.UNDEF_FILES_ERR]
 				- [member STTError.USER_DIR_MAKE_ERR]

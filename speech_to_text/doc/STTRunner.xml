@@ -1,67 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <class name="STTRunner" inherits="Node" category="Core" version="3.0-stable">
 	<brief_description>
+		Uses STT (Speech to Text) to identify keywords spoken by the user.
 	</brief_description>
 	<description>
+		Responsible for running speech recognition itself, identifying keywords spoken by the user.
 	</description>
 	<tutorials>
+		https://samuraisigma.github.io/godot-docs/doc/community/tutorials/misc/speech_to_text.html
 	</tutorials>
 	<demos>
+		[b]Color Clutter[/b], a simple Godot game that uses speech to text, is available on the following link:
+		https://github.com/SamuraiSigma/color-clutter
 	</demos>
 	<methods>
-		<method name="get_queue" qualifiers="const">
-			<return type="STTQueue">
-			</return>
-			<description>
-			</description>
-		</method>
 		<method name="get_run_error">
 			<return type="int" enum="STTError.Error">
 			</return>
 			<description>
+				Returns the [STTError] constant that depicts how the previously running speech recognition thread has ended. It can be one of the following values:
+				- [member STTError.OK]
+				- [member STTError.REC_START_ERR]
+				- [member STTError.REC_STOP_ERR]
+				- [member STTError.UTT_START_ERR]
+				- [member STTError.UTT_RESTART_ERR]
+				- [member STTError.AUDIO_READ_ERR]
+				If no thread was previously run, returns [member STTError.OK].
 			</description>
 		</method>
 		<method name="reset_run_error">
 			<return type="void">
 			</return>
 			<description>
+				Resets the [STTError] value that depicts how the previously running speech recognition thread has ended, setting it to [member STTError.OK].
 			</description>
 		</method>
 		<method name="running">
 			<return type="bool">
 			</return>
 			<description>
-			</description>
-		</method>
-		<method name="set_queue">
-			<return type="void">
-			</return>
-			<argument index="0" name="stt_queue" type="STTQueue">
-			</argument>
-			<description>
+				Returns [code]true[/code] if the speech recognition thread is active, or [code]false[/code] otherwise.
 			</description>
 		</method>
 		<method name="start">
 			<return type="int" enum="STTError.Error">
 			</return>
 			<description>
+				Creates a thread to repeatedly listen to keywords. The thread can be stopped with [method stop]. If [method start] was previously called, the current thread is halted and a new recognition, with the specified arguments, is created.
+				Returns one of the following [STTError] constants:
+				- [member STTError.OK]
+				- [member STTError.UNDEF_CONFIG_ERR]
+				- [member STTError.UNDEF_QUEUE_ERR]
+				[i]Notes:[/i]
+				- To check for an error that occurred and stopped the thread, see [method get_run_error]
+				- See [member config] to set a [STTConfig] object
+				- See [member queue] to set a [STTQueue] object
 			</description>
 		</method>
 		<method name="stop">
 			<return type="void">
 			</return>
 			<description>
+				Stops the thread currently doing speech recognition. If [method start] wasn't called previously, this function does nothing.
 			</description>
 		</method>
 	</methods>
 	<members>
 		<member name="config" type="STTConfig" setter="set_config" getter="get_config">
+			Configuration object containing recognition variables.
+		</member>
+		<member name="queue" type="STTQueue" setter="set_queue" getter="get_queue">
+			Queue for storing recognized keywords.
 		</member>
 		<member name="recorder buffer size (bytes)" type="int" setter="set_rec_buffer_size" getter="get_rec_buffer_size">
+			Microphone recorder buffer size.
 		</member>
 	</members>
 	<constants>
 		<constant name="DEFAULT_REC_BUFFER_SIZE" value="2048">
+			Microphone recorder default buffer size when creating a new [STTRunner] object.
 		</constant>
 	</constants>
 </class>
