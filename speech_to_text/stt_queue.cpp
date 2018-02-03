@@ -31,7 +31,7 @@ void STTQueue::clear() {
 	keywords.clear();
 }
 
-void STTQueue::set_capacity(int capacity) {
+void STTQueue::set_capacity(const int &capacity) {
 	if (capacity <= 0) {
 		ERR_PRINT("Keywords queue capacity must be greater than 0");
 		return;
@@ -54,6 +54,9 @@ void STTQueue::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_capacity", "capacity"),
 	                     &STTQueue::set_capacity);
 	ClassDB::bind_method("get_capacity", &STTQueue::get_capacity);
+
+	ADD_PROPERTYNZ(PropertyInfo(Variant::INT, "capacity", PROPERTY_HINT_DIR),
+	               "set_capacity", "get_capacity");
 
 	BIND_CONSTANT(DEFAULT_KWS_CAPACITY);
 }

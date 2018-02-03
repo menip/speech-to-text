@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <class name="STTQueue" inherits="Reference" category="Core" version="3.0-stable">
 	<brief_description>
+		Stores keywords obtained through speech recognition (i.e., from [STTRunner]).
 	</brief_description>
 	<description>
+		Wrapper for a queue datatype. Typically stores keywords from speech recognition (i.e., from [STTRunner]).
 	</description>
 	<tutorials>
+		https://samuraisigma.github.io/godot-docs/doc/community/tutorials/misc/speech_to_text.html
 	</tutorials>
 	<demos>
+		[b]Color Clutter[/b], a simple Godot game that uses speech to text, is available on the following link:
+		https://github.com/SamuraiSigma/color-clutter
 	</demos>
 	<methods>
 		<method name="clear">
 			<return type="void">
 			</return>
 			<description>
+				Clears all keywords in the queue, leaving it with a size of 0.
 			</description>
 		</method>
 		<method name="empty">
 			<return type="bool">
 			</return>
 			<description>
-			</description>
-		</method>
-		<method name="get_capacity">
-			<return type="int">
-			</return>
-			<description>
+				Returns [code]true[/code] if the queue is empty, or [code]false[/code] otherwise.
 			</description>
 		</method>
 		<method name="next">
 			<return type="String">
 			</return>
 			<description>
-			</description>
-		</method>
-		<method name="set_capacity">
-			<return type="void">
-			</return>
-			<argument index="0" name="capacity" type="int">
-			</argument>
-			<description>
+				Removes and returns the first element in the keywords queue. If the queue is empty, returns an empty [String] [code]""[/code].
 			</description>
 		</method>
 		<method name="size">
 			<return type="int">
 			</return>
 			<description>
+				Returns the number of keywords currently in the queue.
 			</description>
 		</method>
 	</methods>
+	<members>
+		<member name="capacity" type="int" setter="set_capacity" getter="get_capacity">
+			The maximum number of elements that the queue may contain.
+			[i]Note:[/i] If the new capacity, set by [code]set_capacity()[/code], exceeds the current number of elements in the queue, a warning message is printed, but no further actions are taken.
+		</member>
+	</members>
 	<constants>
 		<constant name="DEFAULT_KWS_CAPACITY" value="100">
+			Default [member capacity] for a newly created queue.
 		</constant>
 	</constants>
 </class>
