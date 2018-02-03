@@ -14,7 +14,7 @@ String STTError::get_error_string(STTError::Error err) {
 		case UNDEF_QUEUE_ERR:
 			return "Undefined keywords queue (STTQueue)";
 		case USER_DIR_MAKE_ERR:
-			return "Couldn't create STT directory in user://";
+			return "Couldn't create speech to text directory in user:// path";
 		case USER_DIR_COPY_ERR:
 			return "Couldn't copy config files to user:// directory";
 		case MULTIBYTE_STR_ERR:
@@ -36,7 +36,7 @@ String STTError::get_error_string(STTError::Error err) {
 		case UTT_RESTART_ERR:
 			return "Couldn't restart utterance during speech recognition";
 		case AUDIO_READ_ERR:
-			return "Error while reading data from recorder";
+			return "Error while reading data from audio recorder";
 	}
 
 	String err_number = itos((int64_t) err);  // Error -> int64_t -> String

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <class name="STTError" inherits="Object" category="Core" version="3.0-stable">
 	<brief_description>
+		Defines error values returned by some STT-related methods.
 	</brief_description>
 	<description>
+		Defines error values returned by some speech recognition-related methods, as well as their meanings.
 	</description>
 	<tutorials>
+		https://samuraisigma.github.io/godot-docs/doc/community/tutorials/misc/speech_to_text.html
 	</tutorials>
 	<demos>
+		[b]Color Clutter[/b], a simple Godot game that uses speech to text, is available on the following link:
+		https://github.com/SamuraiSigma/color-clutter
 	</demos>
 	<methods>
 		<method name="get_error_string">
@@ -15,41 +20,58 @@
 			<argument index="0" name="error_number" type="int" enum="STTError.Error">
 			</argument>
 			<description>
+				Returns a short [String] explaining the given [STTError] constant value.
 			</description>
 		</method>
 	</methods>
 	<constants>
 		<constant name="OK" value="0" enum="Error">
+			No error occurred. All is well :)
 		</constant>
 		<constant name="UNDEF_FILES_ERR" value="1" enum="Error">
+			One or more file/directory names aren't defined.
 		</constant>
 		<constant name="UNDEF_CONFIG_ERR" value="2" enum="Error">
+			Undefined configuration variable ([STTConfig]).
 		</constant>
 		<constant name="UNDEF_QUEUE_ERR" value="3" enum="Error">
+			Undefined keywords queue ([STTQueue]).
 		</constant>
 		<constant name="USER_DIR_MAKE_ERR" value="4" enum="Error">
+			Couldn't create speech to text directory in [b]user://[/b] path.
 		</constant>
 		<constant name="USER_DIR_COPY_ERR" value="5" enum="Error">
+			Couldn't copy config files to [b]user://[/b] directory.
 		</constant>
 		<constant name="MULTIBYTE_STR_ERR" value="6" enum="Error">
-		</constant>
-		<constant name="CONFIG_CREATE_ERR" value="8" enum="Error">
+			Couldn't convert filename to a multibyte sequence.
 		</constant>
 		<constant name="MEM_ALLOC_ERR" value="7" enum="Error">
+			No memory available for allocation.
+		</constant>
+		<constant name="CONFIG_CREATE_ERR" value="8" enum="Error">
+			Couldn't create [i]Pocketsphinx[/i] configuration variable. This variable is created through [method STTConfig.init].
 		</constant>
 		<constant name="REC_CREATE_ERR" value="9" enum="Error">
+			Couldn't open audio device (microphone).
 		</constant>
 		<constant name="DECODER_CREATE_ERR" value="10" enum="Error">
+			Couldn't create [i]Sphinxbase[/i] decoder variable. This variable is responsible for decoding user speech into text.
 		</constant>
 		<constant name="REC_START_ERR" value="11" enum="Error">
+			Couldn't start recording user's voice.
 		</constant>
 		<constant name="REC_STOP_ERR" value="12" enum="Error">
+			Couldn't stop recording user's voice.
 		</constant>
 		<constant name="UTT_START_ERR" value="13" enum="Error">
+			Couldn't start utterance (what the computer understands from user speech) during speech recognition.
 		</constant>
 		<constant name="UTT_RESTART_ERR" value="14" enum="Error">
+			Couldn't restart utterance (what the computer understands from user speech) during speech recognition.
 		</constant>
 		<constant name="AUDIO_READ_ERR" value="15" enum="Error">
+			Error while reading data from audio recorder.
 		</constant>
 	</constants>
 </class>
