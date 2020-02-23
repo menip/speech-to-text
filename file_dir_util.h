@@ -1,7 +1,7 @@
 #ifndef FILE_DIR_UTIL_H
 #define FILE_DIR_UTIL_H
 
-#include "ustring.h"
+#include "core/ustring.h"
 
 /**
  * Utility class containing file and directory manipulation methods.

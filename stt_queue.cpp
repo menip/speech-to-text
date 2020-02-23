@@ -55,7 +55,7 @@ void STTQueue::_bind_methods() {
 	                     &STTQueue::set_capacity);
 	ClassDB::bind_method("get_capacity", &STTQueue::get_capacity);
 
-	ADD_PROPERTYNZ(PropertyInfo(Variant::INT, "capacity", PROPERTY_HINT_DIR),
+	ADD_PROPERTY(PropertyInfo(Variant::INT, "capacity", PROPERTY_HINT_DIR),
 	               "set_capacity", "get_capacity");
 
 	BIND_CONSTANT(DEFAULT_KWS_CAPACITY);

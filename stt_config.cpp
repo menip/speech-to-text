@@ -187,12 +187,12 @@ void STTConfig::_bind_methods() {
 	                     &STTConfig::set_kws_filename);
 	ClassDB::bind_method("get_kws_filename", &STTConfig::get_kws_filename);
 
-	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "hmm directory", PROPERTY_HINT_DIR),
+	ADD_PROPERTY(PropertyInfo(Variant::STRING, "hmm directory", PROPERTY_HINT_DIR),
 	               "set_hmm_dirname", "get_hmm_dirname");
-	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "dictionary file",
+	ADD_PROPERTY(PropertyInfo(Variant::STRING, "dictionary file",
 	                            PROPERTY_HINT_FILE, "dict"),
 	               "set_dict_filename", "get_dict_filename");
-	ADD_PROPERTYNZ(PropertyInfo(Variant::STRING, "keywords file",
+	ADD_PROPERTY(PropertyInfo(Variant::STRING, "keywords file",
 	                            PROPERTY_HINT_FILE, "kws"),
 	               "set_kws_filename", "get_kws_filename");
 }
