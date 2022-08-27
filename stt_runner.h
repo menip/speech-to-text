@@ -11,7 +11,7 @@ class STTRunner : public Node {
 	GDCLASS(STTRunner, Node);
 
 private:
-	Thread *recognition;  // Used to run the speech recognition in parallel
+	Thread recognition;  // Used to run the speech recognition in parallel
 	bool is_running;      // If true, speech recognition loop is currently on
 
 	Ref<STTConfig> config;

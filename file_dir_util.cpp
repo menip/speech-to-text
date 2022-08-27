@@ -11,7 +11,7 @@ bool FileDirUtil::create_dir_safe(String path, String dirname) {
 	else {
 		err = da->make_dir(dirname);
 		if (err != OK)
-			ERR_PRINTS("Couldn't create '" + dirname + "' directory in '" +
+			ERR_PRINT("Couldn't create '" + dirname + "' directory in '" +
 			           path + "'");
 	}
 
@@ -26,7 +26,7 @@ bool FileDirUtil::copy_file(String from, String to) {
 	String to_target = to.plus_file(from_basename);
 
 	if (da->copy(from, to_target) != OK) {
-		ERR_PRINTS("Couldn't copy '" + from + "' to '" + to_target + "'");
+		ERR_PRINT("Couldn't copy '" + from + "' to '" + to_target + "'");
 		memdelete(da);
 		return false;
 	}
@@ -80,7 +80,7 @@ bool FileDirUtil::remove_dir_recursive(String dirname) {
 	DirAccess *da = DirAccess::open(dirname);
 
 	if (!DirAccess::exists(dirname)) {
-		ERR_PRINTS("Directory '" + dirname + "' not found");
+		ERR_PRINT("Directory '" + dirname + "' not found");
 		memdelete(da);
 		return false;
 	}
@@ -100,7 +100,7 @@ bool FileDirUtil::remove_dir_recursive(String dirname) {
 			remove_dir_recursive(dirname.plus_file(filename));
 		// Regular file; remove normally
 		else if (da->remove(filename) != OK) {
-			ERR_PRINTS("Couldn't delete '" + filename + "' in '" + dirname + "'");
+			ERR_PRINT("Couldn't delete '" + filename + "' in '" + dirname + "'");
 			memdelete(da);
 			return false;
 		}
@@ -111,7 +111,7 @@ bool FileDirUtil::remove_dir_recursive(String dirname) {
 	// Delete empty "dirname" directory
 	Error err = da->remove(dirname);
 	if (err != OK)
-		ERR_PRINTS("Couldn't delete '" + dirname + "'");
+		ERR_PRINT("Couldn't delete '" + dirname + "'");
 
 	memdelete(da);
 	return err == OK;

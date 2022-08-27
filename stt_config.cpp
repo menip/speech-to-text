@@ -137,7 +137,7 @@ void STTConfig::set_hmm_dirname(const String &hmm_dirname) {
 	if (DirAccess::exists(hmm_dirname))
 		this->hmm_dirname = hmm_dirname;
 	else
-		ERR_PRINTS("Directory '" + hmm_dirname + "' not found!");
+		ERR_PRINT("Directory '" + hmm_dirname + "' not found!");
 }
 
 String STTConfig::get_hmm_dirname() const {
@@ -148,7 +148,7 @@ void STTConfig::set_dict_filename(const String &dict_filename) {
 	if (FileAccess::exists(dict_filename))
 		this->dict_filename = dict_filename;
 	else
-		ERR_PRINTS("File '" + dict_filename + "' not found!");
+		ERR_PRINT("File '" + dict_filename + "' not found!");
 }
 
 String STTConfig::get_dict_filename() const {
@@ -159,7 +159,7 @@ void STTConfig::set_kws_filename(const String &kws_filename) {
 	if (FileAccess::exists(kws_filename))
 		this->kws_filename = kws_filename;
 	else
-		ERR_PRINTS("File '" + kws_filename + "' not found!");
+		ERR_PRINT("File '" + kws_filename + "' not found!");
 }
 
 String STTConfig::get_kws_filename() const {

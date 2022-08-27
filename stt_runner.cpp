@@ -16,7 +16,7 @@ STTError::Error STTRunner::start() {
 	is_running = true;
 
 	reset_run_error();
-	recognition = Thread::create(STTRunner::_thread_recognize, this);
+	recognition.start(STTRunner::_thread_recognize, this);
 
 	return STTError::OK;
 }
@@ -26,11 +26,9 @@ bool STTRunner::running() {
 }
 
 void STTRunner::stop() {
-	if (recognition != NULL) {
+	if (recognition.is_started()) {
 		is_running = false;
-		Thread::wait_to_finish(recognition);
-		memdelete(recognition);
-		recognition = NULL;
+		recognition.wait_to_finish();
 	}
 }
 
@@ -177,16 +175,15 @@ void STTRunner::_bind_methods() {
 }
 
 STTRunner::STTRunner() {
-	recognition = NULL;
+	recognition.wait_to_finish(); //TODO maybe just don't need
 	is_running = false;
 	rec_buffer_size = DEFAULT_REC_BUFFER_SIZE;
 	reset_run_error();
 }
 
 STTRunner::~STTRunner() {
-	if (recognition != NULL) {
+	if (recognition.is_started()) {
 		is_running = false;
-		Thread::wait_to_finish(recognition);
-		memdelete(recognition);
+		recognition.wait_to_finish();
 	}
 }

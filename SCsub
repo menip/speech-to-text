@@ -91,6 +91,7 @@ if platform == "x11":
         base_srcs.append("libsphinxad/ad_pulse.c")
     elif os.system("pkg-config --exists alsa") == 0:
         base_srcs.append("libsphinxad/ad_alsa.c")
+        env.Append(LIBS=["-lasound"])
     else:
         print("[Speech to Text] Error: No PulseAudio or ALSA support found!")
         Exit(1)
@@ -163,8 +164,8 @@ all_srcs = base_srcs + pocket_srcs + stt_srcs
 
 if ARGUMENTS.get('speech_to_text_shared', 'no') == 'yes':
     # Shared lib compilation
-    module_env.Append(CXXFLAGS='-fPIC')  # Shared library flag
-    module_env['LIBS'] = []
+    module_env.Append(CXXFLAGS=['-fPIC'])  # Shared library flag
+    module_env['LIBS'] = ["-lasound"] if platform == 'x11' else []
 
     shared_lib = module_env.SharedLibrary(target='#bin/speech_to_text',
                                           source=all_srcs)

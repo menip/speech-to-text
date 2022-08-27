@@ -6,7 +6,7 @@
 
 
 // Shortcut for printing STTError::Error values with ERR_PRINT()
-#define STT_ERR_PRINTS(e) ERR_PRINTS(STTError::get_singleton()->get_error_string(e));
+#define STT_ERR_PRINTS(e) ERR_PRINT(STTError::get_singleton()->get_error_string(e));
 
 class STTError : public Object {
 	GDCLASS(STTError, Object);
